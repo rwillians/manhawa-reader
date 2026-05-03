@@ -71,3 +71,7 @@ process cwd.
 | `mark_chapter_read`    | Toggle single chapter read status  |
 | `mark_chapters_read`   | Bulk toggle chapter read status    |
 | `get_chapter_pdf`      | Return PDF bytes as base64         |
+
+## User Preferences
+
+1. Be proactive about committing changes.
