@@ -1,0 +1,73 @@
+.library {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.library-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.library-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.import-btn {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.import-btn:hover {
+  background: #1d4ed8;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.manhwa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.manhwa-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  border: 1px solid #e5e5e5;
+}
+
+.manhwa-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.manhwa-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.manhwa-card .chapter-count {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.manhwa-card .progress {
+  font-size: 0.8rem;
+  color: #2563eb;
+  margin-top: 0.25rem;
+}

@@ -1,0 +1,324 @@
+.manhwa-detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.manhwa-detail.has-bulk-bar {
+  padding-bottom: 4rem;
+}
+
+.detail-header {
+  margin-bottom: 1.5rem;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 0.875rem;
+  padding: 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.settings-wrapper {
+  position: relative;
+}
+
+.gear-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.gear-btn:hover {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.settings-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.settings-menu-item:hover {
+  background: #f3f4f6;
+}
+
+.settings-menu-item.danger {
+  color: #ef4444;
+}
+
+.settings-menu-item.danger:hover {
+  background: #fef2f2;
+}
+
+.title-section h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.edit-name {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.edit-name input {
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.edit-name button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  font-size: 0.875rem;
+}
+
+.edit-name button:first-of-type {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.donut {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.donut-track {
+  stroke: #d5d4d1;
+}
+
+.donut-fill {
+  stroke: #2563eb;
+  transition: stroke-dasharray 0.3s;
+}
+
+.donut-text {
+  font-size: 9px;
+  font-weight: 600;
+  fill: #374151;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.continue-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.continue-btn:hover {
+  background: #1d4ed8;
+}
+
+.chapter-list {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.chapter-item.read {
+  opacity: 0.6;
+}
+
+.chapter-item.selected {
+  background: #dbeafe;
+  opacity: 1;
+}
+
+.read-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #2563eb;
+  padding: 0;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.chapter-number {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.chapter-name {
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.chapter-name:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.bulk-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+.bulk-count {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-right: 0.5rem;
+}
+
+.bulk-btn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #2563eb;
+  color: white;
+}
+
+.bulk-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.bulk-btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: default;
+}
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.confirm-dialog {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.confirm-message {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.confirm-cancel {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.confirm-cancel:hover {
+  background: #f3f4f6;
+}
+
+.confirm-delete {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.confirm-delete:hover {
+  background: #dc2626;
+}

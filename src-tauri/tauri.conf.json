@@ -1,0 +1,33 @@
+{
+  "productName": "Manhawa Reader",
+  "version": "0.1.0",
+  "identifier": "com.manhawa-reader.desktop",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Manhawa Reader",
+        "width": 1024,
+        "height": 768,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "icon": [
+      "icons/icon.png"
+    ]
+  },
+  "plugins": {}
+}
