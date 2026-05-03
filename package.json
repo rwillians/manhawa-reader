@@ -9,7 +9,7 @@
   "scripts": {
     "setup": "bun install && cargo fetch --manifest-path apps/backend/Cargo.toml",
     "dev": "tauri dev -c apps/backend/tauri.conf.json",
-    "build": "tauri build -c apps/backend/tauri.conf.json && mkdir -p dist && mv \"apps/backend/target/release/bundle/dmg/Manhawa Reader\"_*.dmg \"dist/Manhawa Reader.dmg\""
+    "build": "tauri build -c apps/backend/tauri.conf.json && mkdir -p dist && cp \"apps/backend/target/release/bundle/dmg/Manhawa Reader\"_*.dmg \"dist/Manhawa Reader.dmg\""
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.0.0"
