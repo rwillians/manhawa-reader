@@ -238,7 +238,7 @@ export function ManhwaDetail({ manhwaId, onNavigate }: Props) {
               strokeLinecap="round"
             />
             <text x="18" y="18" className="donut-text">
-              {progressPct}%
+              {progressPct}
             </text>
           </svg>
           {allRead ? (
