@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "identifier": "com.manhawa-reader.desktop",
   "build": {
-    "beforeDevCommand": "bun run dev",
+    "beforeDevCommand": "bun run --filter @manhawa-reader/frontend dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "bun run build",
-    "frontendDist": "../dist"
+    "beforeBuildCommand": "bun run --filter @manhawa-reader/frontend build",
+    "frontendDist": "../frontend/dist"
   },
   "app": {
     "windows": [

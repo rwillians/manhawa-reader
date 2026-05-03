@@ -13,20 +13,31 @@ A minimalistic macOS desktop app for reading manhawas (Korean comics) stored as 
 # Install Bun + Rust via asdf
 asdf install
 
-# Install frontend dependencies
-bun install
+# Install workspace JS deps and pre-fetch Rust crates
+bun run setup
 
 # Start the app in development mode
-bun run tauri dev
+bun run dev
 ```
 
 ## Build
 
 ```sh
-bun run tauri build
+bun run build
 ```
 
-Produces `Manhawa Reader.app` and a `.dmg` installer in `src-tauri/target/release/bundle/`.
+Produces `dist/Manhawa Reader.dmg`. The unpacked `.app` and intermediate
+artifacts stay under `apps/backend/target/release/bundle/`.
+
+## Layout
+
+This is a bun-workspace monorepo:
+
+| Path             | Contents                            |
+| :--------------- | :---------------------------------- |
+| `apps/frontend/` | React + Vite + TypeScript UI        |
+| `apps/backend/`  | Tauri/Rust desktop shell            |
+| `./`             | Workspace orchestration (dev/build) |
 
 ## Features
 

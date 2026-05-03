@@ -11,20 +11,25 @@
 
 ## Project Structure
 
-| Path                            | Purpose                                    |
-| :------------------------------ | :----------------------------------------- |
-| `src/`                          | React frontend                             |
-| `src/views/Library.tsx`         | Collection grid with import                |
-| `src/views/ManhwaDetail.tsx`    | Detail view, chapters, settings, selection |
-| `src/views/Reader.tsx`          | Full-screen PDF reader                     |
-| `src/api.ts`                    | Frontend wrappers for Tauri IPC commands   |
-| `src/types.ts`                  | Shared TypeScript types                    |
-| `src-tauri/`                    | Rust backend (Tauri)                       |
-| `src-tauri/src/commands.rs`     | Tauri IPC command handlers                 |
-| `src-tauri/src/store.rs`        | Data models + JSON persistence             |
-| `src-tauri/src/lib.rs`          | App builder, plugin/command registration   |
-| `src-tauri/tauri.conf.json`     | Tauri app config (window, bundle, plugins) |
-| `src-tauri/capabilities/`       | Permission scoping for Tauri plugins       |
+This repo is a bun-workspace monorepo. Root `package.json` orchestrates;
+the React app lives in `apps/frontend/`, the Tauri shell in `apps/backend/`.
+
+| Path                                       | Purpose                                    |
+| :----------------------------------------- | :----------------------------------------- |
+| `apps/frontend/src/`                       | React frontend                             |
+| `apps/frontend/src/views/Library.tsx`      | Collection grid with import                |
+| `apps/frontend/src/views/ManhwaDetail.tsx` | Detail view, chapters, settings, selection |
+| `apps/frontend/src/views/Reader.tsx`       | Full-screen PDF reader                     |
+| `apps/frontend/src/api.ts`                 | Frontend wrappers for Tauri IPC commands   |
+| `apps/frontend/src/types.ts`               | Shared TypeScript types                    |
+| `apps/frontend/package.json`               | Frontend deps + vite scripts               |
+| `apps/backend/`                            | Rust backend (Tauri)                       |
+| `apps/backend/src/commands.rs`             | Tauri IPC command handlers                 |
+| `apps/backend/src/store.rs`                | Data models + JSON persistence             |
+| `apps/backend/src/lib.rs`                  | App builder, plugin/command registration   |
+| `apps/backend/tauri.conf.json`             | Tauri app config (window, bundle, plugins) |
+| `apps/backend/capabilities/`               | Permission scoping for Tauri plugins       |
+| `package.json`                             | Workspace root + `dev`/`build` scripts     |
 
 ## Data Storage
 
@@ -33,13 +38,18 @@ Library data: `~/Documents/Manhawa Reader/.data/library.json`
 ## Development
 
 ```sh
-asdf install       # install bun + rust via .tool-versions
-bun install        # install frontend dependencies
-bun run tauri dev  # start dev server with hot reload
-bun run tauri build # production build (.app + .dmg)
+asdf install   # install bun + rust via .tool-versions
+bun install    # install workspace deps (root + frontend)
+bun run dev    # start dev server with hot reload
+bun run build  # production build (.app + .dmg)
 ```
 
-Build output: `src-tauri/target/release/bundle/macos/` and `bundle/dmg/`
+Build output: `apps/backend/target/release/bundle/macos/` and `bundle/dmg/`
+
+Both `dev` and `build` invoke the Tauri CLI with `-c apps/backend/tauri.conf.json`.
+Tauri's `beforeDevCommand`/`beforeBuildCommand` use bun's workspace filter
+(`bun run --filter @manhawa-reader/frontend …`) so they don't depend on the
+process cwd.
 
 ## Architecture Decisions
 

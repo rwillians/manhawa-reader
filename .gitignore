@@ -1,25 +1,6 @@
-# Dependencies
 node_modules/
-
-# Build output
 dist/
-
-# Rust
-target/
-
-# Environment
 .env
 .envrc
-
-# OS
 .DS_Store
 Thumbs.db
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Tauri
-src-tauri/gen/
